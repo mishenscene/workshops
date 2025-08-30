@@ -1,0 +1,28 @@
+# 1:1 mapping
+# {
+#   name: hello_world,
+#   on: [push],
+#   jobs: {}
+# }
+
+# name
+name: hello_world
+
+# trigger, takes in an array
+on:
+- push
+
+# one or more jobs, within the server/runner
+jobs: 
+    greetings:
+        runs-on: ubuntu-latest
+        # running shell commands
+        steps:
+            - id: s00
+              run: echo "Current time in GitHub is $(date)"
+            # # cat the file
+            # - id: s01
+            #   run: ls -al
+            # # list the file
+            # - id: s02
+            #   run: cat hello.txt
