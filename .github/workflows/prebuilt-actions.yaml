@@ -27,5 +27,5 @@ jobs:
               uses: mscoutermarsh/cowsays-action@master
               with:
                 # Step - context
-                text: 'Moo moo mOOOOO! ${{steps.s01.outputs.CURR_DATE}}'
+                text: 'Moo moo mOOOOO! ${{steps.s01.outputs.CURR_DATE}}, ${{github.ref}}, ${{github.repository}}'
                 color: green
