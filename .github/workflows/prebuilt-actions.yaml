@@ -6,7 +6,7 @@
 # }
 
 # name
-name: hello_world
+name: prebuilt_actions
 
 # trigger, takes in an array
 on:
@@ -19,10 +19,13 @@ jobs:
         # running shell commands
         steps:
             - id: s00
-              run: echo "Current time in GitHub is $(date)"
-            # # cat the file
-            # - id: s01
-            #   run: ls -al
-            # # list the file
-            # - id: s02
-            #   run: cat hello.txt
+              run: echo "Current time in GitHub is $(date), $(GITHUB_OUTPUT)"
+            - id: s01
+              # create a value and pass to the next step (redirection) 
+              run: echo "CURR_DATE=$(date)" >> $GITHUB_OUTPUT
+            - id: s02
+              uses: mscoutermarsh/cowsays-action@master
+              with:
+                # Step - context
+                text: 'Moo moo mOOOOO! ${{steps.s01.outputs.CURR_DATE}}'
+                color: green

@@ -6,7 +6,7 @@
 # }
 
 # name
-name: hello_world
+name: basic_actions
 
 # trigger, takes in an array
 on:
@@ -20,8 +20,9 @@ jobs:
         steps:
             - id: s00
               run: echo "Current time in GitHub is $(date)"
-            - id: s01
-              uses: mscoutermarsh/cowsays-action@master
-              with:
-                text: 'Moo moo mOOOOO'
-                color: green
+            # # cat the file
+            # - id: s01
+            #   run: ls -al
+            # # list the file
+            # - id: s02
+            #   run: cat hello.txt

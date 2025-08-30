@@ -28,6 +28,11 @@ In GitHub, the server needs to be mounted manually
 #### Prebuilt-Actions
 Pre-built actions are docker containers
 
+Use cases
+- Code signing during securities
+
+On Linux, properties in a $ are an environment variable (...)
+
 ## Links
 [GitHub Actions | Documentation](https://docs.github.com/en/actions/get-started/understand-github-actions)
 [GitHub, Run a workflow | Documentation](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow)
